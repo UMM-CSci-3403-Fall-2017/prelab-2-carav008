@@ -67,6 +67,10 @@ int is_clean(char* str) {
   // greater than the second.
   result = strcmp(str, cleaned);
 
+  if (cleaned[strlen(cleaned) - 1] != '\0'){
+     free(cleaned);
+  }
+
   return result == 0;
 }
 
@@ -74,12 +78,12 @@ int main() {
   int i;
   int NUM_STRINGS = 7;
   // Makes an array of 7 string constants for testing.
-  char* strings[] = {  "Morris", 
-		       "  stuff", 
-		       "Minnesota", 
-		       "nonsense  ", 
-		       "USA", 
-		       "   ", 
+  char* strings[] = {  "Morris",
+		       "  stuff",
+		       "Minnesota",
+		       "nonsense  ",
+		       "USA",
+		       "   ",
 		       "     silliness    "
   };
 
