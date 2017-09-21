@@ -21,7 +21,7 @@ result = calloc(size-num_spaces+1, sizeof(char));
 The memory errors are happening because if the character pointer arrays is empty then no memory is allocated. To fix this we need to free ***cleaned*** using the free command. We must add a conditional and since it is declared that the null terminator _'\0'_ indicates the end of the string. And so we will check that if it is not the end of the string then we must free it.
 
 ```c
-if (cleaned[strlen(cleaned) - 1] == '\0'){
+if (cleaned[strlen(cleaned) - 1] != '\0'){
    free(cleaned);
 }
 ```
